@@ -1,20 +1,25 @@
+def encode(strs):
+    result = ''
+    for string in strs:
+        result += str(len(string)) + '#' + string
+    return result
+
 
 def decode(string):
-    repsonse = ""
-    print(string(1, 5))
-    # i = 0
-    # while i <= len(string):
-    #     prefix = string[i]
-    #     repsonse += string(i+1, i+1+int(prefix))
-    #     i += prefix + 1
+    result, i = [], 0
+
+    while i < len(string):
+        j = i
+        while string[j] != '#':
+            j += 1
+        length = int(string[i:j])
+        result.append(string[j+1: j+1+length])
+        i = j + 1 + length
+    return result
 
 
-def encode(strs):
-    response = ""
-    for string in strs:
-        response += str(len(string)) + string
-    decode(response)
-    return response
+print(encode(strs=["lint", "code", "love", "you"]))
+print(decode(string=encode(strs=["lint", "code", "love", "you"])))
 
-
-encode(strs=["lint", "code", "love", "you"])
+print(encode(strs=["we", "say", ":", "yes"]))
+print(decode(string=encode(strs=["we", "say", ":", "yes"])))
