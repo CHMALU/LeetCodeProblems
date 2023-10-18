@@ -1,4 +1,5 @@
-LeetCode Problems Solutions
+LeetCodeProblems 
+
 This repository contains my solutions to various coding problems from LeetCode. Each problem is organized into a separate folder, and within each folder, you will find the solution code along with comments.
 
 Table of Contents
